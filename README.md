@@ -4,9 +4,9 @@ Purpose of AI Use
 
 **✔️ brainstorming** 
 
-**✔️ layout/UI ideas 
+**✔️ layout/UI ideas** 
 
-✔️ debugging ** 
+**✔️ debugging **
 
 □ code generation 
 
