@@ -1,6 +1,7 @@
 AI Tool(s) Used: **Claude**
 
 Purpose of AI Use
+
 **✔️ brainstorming** 
 
 **✔️ layout/UI ideas 
