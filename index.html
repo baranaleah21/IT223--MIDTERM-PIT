@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESUMÉ</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="css/style.css"/>
+</head> 
+<body>
+
+  <button id="dark-toggle">Dark Mode</button>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <header id="main">
+    <img src="assets/profile.jpg" alt="My profile photo" />
+      <h1>Aleah S. Baran</h1>
+      <p>Bachelor of Science in Information Technology | Junior Developer</p>
+      <p id="greeting"></p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hey there! This is Aleah S. Baran, I am a second-year Bachelor of Science in Information Technology student and a junior developer
+      with a growing foundation in programming and web development. I am eager to learn new technologies, improve my technical skills,
+      and apply my knowledge to real-world projects.</p>  
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+
+    <div class="timeline">
+
+      <div>
+        <h3>2024 - Present</h3>
+        <p>University of Science and Technology of Southern Philippines</p>
+        <p>Bachelor of Science in Information Technology</p>
+      </div>
+
+      <div>
+        <h3>2022 - 2024</h3>
+        <p>Liceo de Cagayan University</p>
+        <p>Humanities in Social Sciences</p>
+      </div>
+
+      <div>
+        <h3>2018 - 2022</h3>
+        <p>Misamis Oriental General Comprehensive High School</p>
+        <p>Junior High School</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>MySQL</li>
+      <li>Python</li>
+      <li>Javascript</li>
+    </ul>
+
+    <button id="show-bars-btn">Show Skill Levels</button>
+
+    <div id="skill-bars">
+
+      <div class="skill-item">
+        <p>HTML</p>
+        <div class="fullbar">
+          <div class="fillbar" data-width="70"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <p>CSS</p>
+        <div class="fullbar">
+          <div class="fillbar" data-width="55"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <p>MySQL</p>
+        <div class="fullbar">
+          <div class="fillbar" data-width="50"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <p>Python</p>
+        <div class="fullbar">
+          <div class="fillbar" data-width="65"></div>
+        </div>
+      </div>
+
+      <div class="skill-item">
+        <p>Javascript</p>
+        <div class="fullbar">
+          <div class="fillbar" data-width="50"></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+
+    <div id="filters">
+      <button class="btn active" data-filter="all">All</button>
+      <button class="btn" data-filter="python">Python</button>
+      <button class="btn" data-filter="web">Web</button>
+      <button class="btn" data-filter="java">Java</button>
+    </div>
+
+    <div class="cards">
+
+      <div data-type="python">
+        <h3>Multiplayer Tetris Game</h3>
+        <p>A Python-based Tetris game incorporating real-time multiplayer functionality using simple networking to enable interactive and competitive gameplay.</p>
+      </div>
+
+      <div data-type="java">
+        <h3>Concert Ticketing System</h3>
+        <p>A Java-based application that facilitates seat reservation and ticket purchasing through an organized and user-friendly system.</p>
+      </div>
+
+      <div data-type="web">
+        <h3>Personal Portfolio Website</h3>
+        <p>A responsive web portfolio to present my projects, technical skills, and professional achievements.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+
+    <form id="contact-form">
+
+      <label for="contact_name">Name</label>
+      <input type="text" id="contact_name" placeholder="Your full name" />
+      <span id="error_name">Please enter your name.</span>
+
+      <label for="contact_email">Email</label>
+      <input type="email" id="contact_email" placeholder="your@email.com" />
+      <span id="error_email">Please enter a valid email.</span>
+
+      <label for="contact_message">Message</label>
+      <textarea id="contact_message" rows="5" placeholder="Your message..."></textarea>
+      <span id="error_message">Please write a message.</span>
+
+      <button type="submit">Send Message</button>
+      <p id="form-success">Thanks! I'll get back to you soon.</p>      
+      
+    </form> 
+  </section>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

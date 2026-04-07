@@ -1,0 +1,274 @@
+:root {
+  --pale-blush:   #FADAD9;
+  --light-rose:   #F3C3C5;
+  --soft-coral:   #E9ABAE;
+  --warm-pink:    #E0959C;
+  --muted-rasp:   #D78289;
+  --antique-rose: #CE6F79;
+  --vintage-pink: #C65C69;
+  --text-dark:    #5a2a31;
+  --text-mid:     #7a3a42;
+  --text-light:   #9a5560;
+  --white:        #ffffff;
+}
+
+*,*::before,*::after{box-sizing:border-box;}
+
+body {
+  font-family: 'Monospace', serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--pale-blush);
+  color: var(--text-dark);
+}
+
+nav {
+  background-color: var(--vintage-pink);
+  padding: 15px 30px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+nav a { color: #fff; text-decoration: none; font-size: 12px; letter-spacing:.5px; }
+nav a:hover { color: var(--pale-blush); text-decoration: underline; }
+
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  padding: 48px 30px;
+  background-color: var(--light-rose);
+  border-bottom: 3px solid var(--soft-coral);
+}
+#main img { width:200px; height:200px; border-radius:50%; border:4px solid var(--vintage-pink); object-fit:cover; }
+#main h1 { font-size:30px; margin:0; color:var(--vintage-pink); font-weight:bold; letter-spacing:1px; }
+#main p  { color:var(--text-mid); font-size:14px; margin:0; }
+#greeting { font-size:16px; font-weight:bold; color:var(--antique-rose); margin-top:6px; }
+
+section { padding:60px 30px; border-bottom:1px solid var(--soft-coral); }
+section h2 { font-size:26px; margin-bottom:20px; color:var(--vintage-pink); font-weight:bold; letter-spacing:.5px; }
+
+#about { max-width:750px; margin:0 auto; text-align:center; background-color:var(--pale-blush); }
+#about p { font-size:16px; line-height:1.85; color:var(--text-mid); }
+
+/* ── EDUCATION ── */
+#education { background-color: var(--pale-blush); }
+#education h2 { max-width:750px; margin:0 auto 36px auto; text-align:center; font-weight: bold;}
+
+#education .timeline {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+#education .timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px; top: 6px; bottom: 6px;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--soft-coral), var(--antique-rose));
+  border-radius: 2px;
+}
+#education .timeline > div {
+  position: relative;
+  background-color: var(--white);
+  border: 1px solid var(--soft-coral);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+  text-align: left;
+  box-shadow: 0 2px 8px rgba(198,92,105,0.08);
+}
+#education .timeline > div::before {
+  content: '';
+  position: absolute;
+  left: -35px; top: 22px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background-color: var(--antique-rose);
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 2px var(--antique-rose);
+}
+#education h3 { font-size:16px; margin-bottom:6px; color:var(--vintage-pink); font-weight:600; }
+#education p  { font-size:13px; color:var(--text-light); margin-bottom:3px; line-height:1.6; }
+
+/* ── SKILLS ── */
+#skills { max-width:750px; margin:0 auto; text-align:center; background-color:var(--pale-blush); }
+
+#skills ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+
+#skills li {
+  background-color: var(--antique-rose);
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s, transform 0.1s;
+}
+#skills li:hover {
+  background-color: var(--vintage-pink);
+  transform: translateY(-2px);
+}
+
+#skills li.active-skill {
+  background-color: var(--vintage-pink);
+  outline: 2px solid var(--text-dark);
+  outline-offset: 2px;
+}
+
+#skill-bars { margin-top: 20px; text-align: left; }
+
+.skill-item { 
+  display: none;
+  margin-bottom: 14px; 
+}
+.skill-item.visible { display: block; }
+
+.skill-item p { font-size:14px; color:var(--text-dark); margin-bottom:5px; }
+.fullbar { background-color:var(--light-rose); height:12px; width:100%; border-radius:6px; overflow:hidden; }
+.fillbar { height:100%; width:0%; background-color:var(--antique-rose); border-radius:6px; transition:width 1s ease; }
+
+#show-bars-btn { margin-top:14px; background-color:var(--antique-rose); color:#fff; padding:9px 20px; border:none; border-radius:20px; cursor:pointer; font-size:14px; font-family:inherit; }
+#show-bars-btn:hover { background-color:var(--vintage-pink); }
+
+/* ── PROJECTS — card grid ── */
+#projects { background-color: var(--light-rose); }
+#projects h2 { max-width:750px; margin:0 auto 20px auto; text-align:center; }
+
+/* card grid */
+#projects .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+  max-width: 750px;
+  margin: 0 auto;
+}
+#projects div[data-type] {
+  background-color: var(--white);
+  border: 1px solid var(--soft-coral);
+  border-radius: 12px;
+  padding: 22px 20px;
+  text-align: left;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 6px rgba(198,92,105,0.07);
+}
+#projects div[data-type]:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(198,92,105,0.15);
+}
+
+#projects div[data-type]::before {
+  content: '';
+  display: block;
+  height: 4px;
+  border-radius: 4px 4px 0 0;
+  background: linear-gradient(90deg, var(--warm-pink), var(--vintage-pink));
+  margin: -22px -20px 16px -20px;
+  border-radius: 12px 12px 0 0;
+}
+#projects h3 { font-size:15px; margin-bottom:8px; color:var(--vintage-pink); font-weight:600; }
+#projects p  { font-size:13px; color:var(--text-light); line-height:1.65; margin-bottom:0; }
+#projects a  { color:var(--antique-rose); font-size:13px; text-decoration:none; border-bottom:1px solid var(--soft-coral); }
+#projects a:hover { color:var(--vintage-pink); }
+
+#filters { display:flex; justify-content:center; gap:10px; margin-bottom:16px; }
+.btn { background-color:var(--pale-blush); color:var(--text-dark); border:1px solid var(--soft-coral); padding:7px 18px; border-radius:20px; cursor:pointer; font-size:13px; font-family:inherit; }
+.btn.active { background-color:var(--antique-rose); color:#fff; border-color:var(--antique-rose); }
+.btn:hover  { background-color:var(--warm-pink); color:#fff; border-color:var(--warm-pink); }
+
+#contact { max-width:750px; margin:0 auto; text-align:center; background-color:var(--pale-blush); }
+#contact-form { display:flex; flex-direction:column; gap:10px; max-width:600px; margin:0 auto; text-align:left; }
+#contact-form label { font-size:14px; font-weight:bold; color:var(--vintage-pink); }
+#contact-form input,
+#contact-form textarea { padding:10px 14px; border:1px solid var(--soft-coral); background-color:#fff; font-size:14px; color:var(--text-dark); border-radius:6px; outline:none; font-family:inherit; }
+#contact-form input:focus,
+#contact-form textarea:focus { border-color:var(--antique-rose); }
+#contact-form button { background-color:var(--antique-rose); color:#fff; padding:12px; border:none; border-radius:20px; font-size:14px; font-family:inherit; cursor:pointer; }
+#contact-form button:hover { background-color:var(--vintage-pink); }
+
+#error_name,#error_email,#error_message { display:none; color:var(--vintage-pink); font-size:13px; }
+#form-success { display:none; color:hsl(118, 100%, 32%); font-size:14px; margin-top:10px; text-align:center; }
+
+/* ── DARK MODE TOGGLE BUTTON ──*/
+#dark-toggle {
+  position: fixed;
+  top: 12px;
+  right: 16px;
+  background-color: var(--vintage-pink);
+  color: #fff;
+  border: none;
+  padding: 8px 16px;      
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  font-weight: 600;
+  z-index: 999;
+  border-radius: 20px;    
+  white-space: nowrap;     
+  line-height: 1;
+}
+#dark-toggle:hover { background-color: var(--antique-rose); }
+
+body.dark #dark-toggle {
+  background-color: #3a1a22;
+  border: 1px solid #a0506a;
+  color: #FADAD9;
+}
+
+/* ── DARK MODE ── */
+body.dark { background-color:#2a1018; color:#FADAD9; }
+body.dark nav { background-color:#1a080e; }
+body.dark #main { background-color:#3a1820; border-bottom-color:#6a2a38; }
+body.dark #main h1 { color:#F3C3C5; }
+body.dark #main p  { color:#E9ABAE; }
+body.dark #greeting { color:#E9ABAE; }
+body.dark section { border-bottom-color:#4a2030; }
+body.dark section h2 { color:#F3C3C5; }
+body.dark #about { background-color:#2a1018; }
+body.dark #about p { color:#E9ABAE; }
+body.dark #education { background-color:#2a1018; }
+body.dark #education .timeline > div { background-color:#341520; border-color:#5a2a38; box-shadow:none; }
+body.dark #education .timeline > div::before { background-color:#CE6F79; box-shadow:0 0 0 2px #CE6F79; border-color:#2a1018; }
+body.dark #education h3 { color:#F3C3C5; }
+body.dark #education p  { color:#D78289; }
+
+body.dark #projects { background-color:#341520; }
+body.dark #projects div[data-type] { background-color:#2a1018; border-color:#5a2a38; box-shadow:none; }
+body.dark #projects div[data-type]:hover { box-shadow:0 8px 20px rgba(0,0,0,0.3); }
+body.dark #projects h3 { color:#F3C3C5; }
+body.dark #projects p  { color:#D78289; }
+body.dark #skills { background-color:#2a1018; }
+body.dark #skills li { background-color:#5a2a38; color:#FADAD9; }
+body.dark #skills li:hover,
+body.dark #skills li.active-skill { background-color:#CE6F79; color:#fff; }
+body.dark .fullbar { background-color:#4a2030; }
+body.dark .fillbar  { background-color:#CE6F79; }
+body.dark .skill-item p { color:#F3C3C5; }
+body.dark .btn { background-color:#3a1820; color:#FADAD9; border-color:#6a2a38; }
+body.dark .btn.active { background-color:#CE6F79; color:#fff; border-color:#CE6F79; }
+body.dark .btn:hover  { background-color:#D78289; border-color:#D78289; }
+body.dark #contact { background-color:#2a1018; }
+body.dark #contact-form label { color:#F3C3C5; }
+body.dark #contact-form input,
+body.dark #contact-form textarea { background-color:#3a1820; border-color:#6a2a38; color:#FADAD9; }
+body.dark #contact-form input:focus,
+body.dark #contact-form textarea:focus { border-color:#CE6F79; }
+body.dark #error_name,
+body.dark #error_email,
+body.dark #error_message { color:#E9ABAE; }
